@@ -36,7 +36,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
+bindsym $mod+w exec rofi -show window
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -116,6 +117,20 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+for_window [class="^.*"] border pixel 2
+
+set $fg  #363837
+set $bg  #363837
+set $focused_bg #363837
+set $ind #407055
+# class                 border  backgr. text indicator child_border
+client.focused          $focused_bg  $focused_bg  $focused_bg  $ind  $focused_bg     
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg      $bg
+client.urgent           $bg     $bg     $fg  $ind      $bg
+client.placeholder       $bg     $bg     $fg  $ind       $bg 
+client.background       $bg
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -149,6 +164,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+exec_always nitrogen --restore
+exec_always compton -b --backend glx --vsync opengl-swc
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
