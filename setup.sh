@@ -3,8 +3,8 @@
 set -e
 set -x
 # basic stuff
-
-cd $(dirname $0)
+SCRIPTDIR=$(dirname $0)
+cd $SCRIPTDIR
 
 if [ "$#" -ne 1 ]; then
     echo "Must be exactly one parameter - Username"
@@ -209,6 +209,8 @@ cd /tmp
 git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
 cd /tmp/gotop/scripts/ && bash download.sh
 sudo mv gotop /usr/local/bin/
+
+cd $SCRIPTDIR
 
 cp -r $(pwd)/i3 $HOME/.config/
 cp -r $(pwd)/polybar $HOME/.config/
