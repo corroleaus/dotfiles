@@ -4,6 +4,11 @@ set -e
 set -x
 # basic stuff
 
+if [ "$#" -ne 1 ]; then
+    echo "Must be exactly one parameter - Username"
+    exit 1
+fi
+
 USERNAME=$1
 
 # throw out the cloud shit.
