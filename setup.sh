@@ -219,5 +219,7 @@ cp -r $(pwd)/i3 $HOME/.config/
 cp -r $(pwd)/polybar $HOME/.config/
 cp -r $(pwd)/terminator $HOME/.config/
 
+nitrogen --set-scaled $(pwd)/i3/
+
 # reboot
 sudo reboot -h now
