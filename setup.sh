@@ -176,7 +176,7 @@ git clone https://github.com/Airblader/i3blocks-gaps i3blocks
 cd i3blocks
 make clean debug
 make install
-rm -r /tmp/i3blocks
+sudo rm -r /tmp/*
 
 # polybar
 sudo apt-get install \
