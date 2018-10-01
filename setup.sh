@@ -203,12 +203,14 @@ libpulse-dev
 cd /tmp
 git clone https://github.com/jaagr/polybar.git
 cd polybar && sudo ./build.sh
+sudo rm -r /tmp/*
 
 # gotop
 cd /tmp
 git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
 cd /tmp/gotop/scripts/ && bash download.sh
 sudo mv gotop /usr/local/bin/
+sudo rm -r /tmp/*
 
 cd $SCRIPTDIR
 
