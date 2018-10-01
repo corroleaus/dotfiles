@@ -219,7 +219,7 @@ cp -r $(pwd)/i3 $HOME/.config/
 cp -r $(pwd)/polybar $HOME/.config/
 cp -r $(pwd)/terminator $HOME/.config/
 
-nitrogen --set-scaled $(pwd)/i3/even_now_desktop.jpg
+nitrogen --set-scaled $(pwd)/i3/asphalt-dark-dawn.jpg
 
 # reboot
 sudo reboot -h now
