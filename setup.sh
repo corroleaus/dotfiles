@@ -4,6 +4,8 @@ set -e
 set -x
 # basic stuff
 
+cd $(dirname $0)
+
 if [ "$#" -ne 1 ]; then
     echo "Must be exactly one parameter - Username"
     exit 1
@@ -208,6 +210,9 @@ git clone --depth 1 https://github.com/cjbassi/gotop /tmp/gotop
 cd /tmp/gotop/scripts/ && bash download.sh
 sudo mv gotop /usr/local/bin/
 
+cp -r $(pwd)/i3 $HOME/.config/
+cp -r $(pwd)/polybar $HOME/.config/
+cp -r $(pwd)/terminator $HOME/.config/
 
 # reboot
 sudo reboot -h now
