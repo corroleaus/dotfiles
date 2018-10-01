@@ -3,8 +3,9 @@
 set -e
 set -x
 # basic stuff
-SCRIPTDIR=$(dirname $0)
-cd $SCRIPTDIR
+cd $(dirname $0)
+SCRIPTDIR=$(pwd)
+
 
 if [ "$#" -ne 1 ]; then
     echo "Must be exactly one parameter - Username"
