@@ -215,9 +215,9 @@ sudo rm -r /tmp/*
 
 cd $SCRIPTDIR
 
-cp -r $(pwd)/i3 $HOME/.config/
-cp -r $(pwd)/polybar $HOME/.config/
-cp -r $(pwd)/terminator $HOME/.config/
+cp -r $(pwd)/i3 /home/$USERNAME/.config/
+cp -r $(pwd)/polybar /home/$USERNAME/.config/
+cp -r $(pwd)/terminator /home/$USERNAME/.config/
 
 nitrogen --set-scaled $(pwd)/i3/asphalt-dark-dawn.jpg
 
